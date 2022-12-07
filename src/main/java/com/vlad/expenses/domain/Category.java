@@ -13,7 +13,7 @@ import jakarta.persistence.OneToMany;
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer categoryId;
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
@@ -31,12 +31,12 @@ public class Category {
 
 	
 	//Getters and setters
-	public Integer getId() {
-		return id;
+	public Integer getCategoryId() {
+		return categoryId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getName() {

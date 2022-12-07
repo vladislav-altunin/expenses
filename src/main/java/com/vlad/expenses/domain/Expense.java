@@ -19,7 +19,7 @@ public class Expense {
 	private double amount;
 
 	@ManyToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "categoryId")
 	private Category category;
 
 	// Constructors
