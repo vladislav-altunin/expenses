@@ -61,7 +61,12 @@ public class ExpensesApplication {
 			User user2 = new User("user2", "$2a$10$2q3E1Nc3ZBIGRqvb0VD0b.ih3.0rPUkujQPzjYg.K5FFdzsDS4A6e", "user2@mail.com", "USER");
 			User user3 = new User("user3", "$2a$10$T4Xv78XDeduJMs7IOpBcGe8QCrIZE.hoqHzwVYrGh/QIpxGC8zUui", "user3@mail.com", "USER");
 			User user4 = new User("user4", "$2a$10$pn4NpsdQxHJY4CVrYyv4geYlen1NYQxYYHLhXKcyH37MF2OT6gWju", "user4@mail.com", "USER");
-			
+			//And saved
+			urepository.save(user0);
+			urepository.save(user1);
+			urepository.save(user2);
+			urepository.save(user3);
+			urepository.save(user4);
 
 		};
 	}

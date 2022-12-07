@@ -57,4 +57,9 @@ public class ExpenseController {
 		model.addAttribute("categories", crepository.findAll());
 		return "editexpense";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
 }
