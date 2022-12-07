@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+<title>Edit expense</title>
+</head>
+<body>
+	<h1 class="col-md-6">Edit expense</h1>
+	<form style="width: 300px" action="#" th:action="@{/save-expense}"
+		th:object="${newExpense}" method="post">
+		<!-- Hidden id is added to avoid duplicates. Hibernate updates an existing
+		object, when IDs are identical. Otherwise a new object is created -->
+		<input type="hidden" id="id" th:field="${newExpense.id}" />
+		<div class="form-group col-md-12">
+			<label for="date">Date:</label> <input type="text"
+				class="form-control" id="date" th:field="${newExpense.date}"
+				disabled />
+		</div>
+		<div class="form-group col-md-12">
+			<label for="name">Name:</label> <input type="text"
+				class="form-control" id="name" th:field="${newExpense.name}" />
+		</div>
+		<div class="form-group col-md-12">
+			<label for="category">Category:</label> <select class="form-control"
+				id="category" name="category">
+				<option id="category" th:each="category : ${categories}"
+					th:text="${category.name}" th:value="${category.getCategoryId()}"
+					th:selected="${category == newExpense.get().getCategory()}"></option>
+			</select>
+		</div>
+		<div class="form-group col-md-12">
+			<label for="description">Description:</label> <input type="text"
+				class="form-control" id="description"
+				th:field="${newExpense.description}" />
+		</div>
+		<div class="form-group col-md-12">
+			<label for="amount">Amount:</label> <input type="text"
+				class="form-control" id="price" th:field="${newExpense.amount}" />
+		</div>
+		<div class="form-group col-md-12">
+			<input class="btn btn-success" type="submit" value="Submit">
+			<a class="btn btn-danger" th:href="@{/index}">Cancel</a>
+		</div>
+	</form>
+</body>
+</html>

@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Expenses</h1>
-	<table>
+	<h1 class="col-md-6">Expenses</h1>
+	<table class="table table-striped">
 		<tr>
 			<th>Date</th>
 			<th>Name</th>
@@ -22,9 +24,15 @@
 			<td th:text="${expense.getCategory().getName()}"></td>
 			<td th:text="${expense.description}"></td>
 			<td th:text="${expense.amount}"></td>
-			<td><a class="btn btn-danger">Delete</a></td>
-			<td><a class="btn btn-warning">Edit</a></td>
+			<td sec:authorize="hasAuthority('ADMIN')"><a
+				class="btn btn-danger"
+				th:href="@{/delete-expense/{id}(id = ${expense.getId()})}">Delete</a></td>
+			<td><a class="btn btn-warning"
+				th:href="@{/edit-expense/{id}(id = ${expense.getId()})}">Edit</a></td>
 		</tr>
 	</table>
+	<div class="form-group col-md-12">
+		<a class="btn btn-success" th:href="@{/add-expense}">Add Expense</a>
+	</div>
 </body>
 </html>
