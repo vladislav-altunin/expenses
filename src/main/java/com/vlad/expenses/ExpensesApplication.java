@@ -1,28 +1,31 @@
 package com.vlad.expenses;
-
-import org.springframework.beans.factory.annotation.Autowired;
+//For in-memory
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.vlad.expenses.domain.Category;
-import com.vlad.expenses.domain.CategoryRepository;
-import com.vlad.expenses.domain.Expense;
-import com.vlad.expenses.domain.ExpenseRepository;
-import com.vlad.expenses.domain.User;
-import com.vlad.expenses.domain.UserRepository;
+//All imports for in-memory
+//import com.vlad.expenses.domain.Category;
+//import com.vlad.expenses.domain.CategoryRepository;
+//import com.vlad.expenses.domain.Expense;
+//import com.vlad.expenses.domain.ExpenseRepository;
+//import com.vlad.expenses.domain.User;
+//import com.vlad.expenses.domain.UserRepository;
 
 @SpringBootApplication
 public class ExpensesApplication {
-	@Autowired
-	private CategoryRepository crepository;
 	
-	@Autowired
-	private ExpenseRepository erepository;
-	
-	@Autowired
-	private UserRepository urepository;
+	//Autowired repos for in-memory testing
+//	@Autowired
+//	private CategoryRepository crepository;
+//	
+//	@Autowired
+//	private ExpenseRepository erepository;
+//	
+//	@Autowired
+//	private UserRepository urepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ExpensesApplication.class, args);
