@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.vlad.expenses.domain.User;
 import com.vlad.expenses.domain.UserRepository;
 
+//Service provides authentication and authorization
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
