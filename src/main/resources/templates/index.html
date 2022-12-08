@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form class="bg-info clearfix" th:action="@{/logout}" method="post">
+		<div class="btn-group" role="group">
+			<p class="btn" th:inline="text">Hello
+				[[${#httpServletRequest.remoteUser}]]!</p>
+			<input class="btn btn-link" type="submit" value="Sign Out">
+		</div>
+	</form>
 	<h1 class="col-md-6">Expenses</h1>
 	<table class="table table-striped">
 		<tr>
